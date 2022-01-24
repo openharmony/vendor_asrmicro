@@ -1,0 +1,104 @@
+{
+    "product_name": "xts_demo",
+    "type": "mini",
+    "version": "3.0",
+    "ohos_version": "OpenHarmony 1.0",
+    "device_company": "lango",
+    "board": "dev_wifi_a",
+    "kernel_type": "liteos_m",
+    "kernel_version": "3.0.0",
+    "subsystems": [
+      {
+        "subsystem": "kernel",
+        "components": [
+          { "component": "liteos_m", "features": [] }
+        ]
+      },
+      {
+        "subsystem": "hiviewdfx",
+        "components": [
+          { "component": "hilog_lite", "features":[] },
+          { "component": "hievent_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "distributedschedule",
+        "components": [
+          { "component": "samgr_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "communication",
+        "components": [
+          { "component": "wifi_lite", "features":[] }
+         ]
+       },
+      {
+        "subsystem": "utils",
+        "components": [
+          { "component": "file", "features":[] },
+          { "component": "kv_store",
+            "features": [
+              "enable_ohos_utils_native_lite_kv_store_use_posix_kv_api = false"
+            ]
+          },
+          { "component": "os_dump", "features":[] },
+          { "component": "timer_task", "features":[] },
+          { "component": "kal_timer", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "startup",
+        "components": [
+          { "component": "bootstrap_lite", "features":[] },
+          { "component": "syspara_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "security",
+        "components": [
+          { "component": "huks", "features":
+            [
+              "disable_huks_binary=true",
+              "disable_authenticate=true"
+            ]
+          }
+        ]
+      },
+      {
+        "subsystem": "iot_hardware",
+        "components": [
+          { "component": "iot_controller", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "xts",
+        "components": [
+          { "component": "xts_acts", "features":
+            [
+              "enable_ohos_test_xts_acts_use_thirdparty_lwip = false"
+            ]
+          },
+           { "component": "xts_tools", "features":[] }
+         ]
+      }
+    ],
+    "third_party_dir": "",
+    "vendor_adapter_dir": "//device/soc/asrmicro/asr582x/liteos_m/sdk/adapter",
+    "product_adapter_dir": "//vendor/asrmicro/xts_demo/hals",
+    "xts_list": [
+      {
+        "enable": "true",
+        "xts_modules": [
+          "ActsKvStoreTest",
+          "ActsDfxFuncTest",
+          "ActsHieventLiteTest",
+          "ActsSamgrTest",
+          "ActsParameterTest",
+          "ActsWifiServiceTest",
+          "ActsWifiIotTest",
+          "ActsBootstrapTest"
+        ]
+      }
+    ]
+  }
