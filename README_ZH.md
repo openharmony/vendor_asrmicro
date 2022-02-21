@@ -2,9 +2,9 @@
 
 ## 介绍
 
-该仓库托管翱捷科技开发的样例代码
+该仓库托管翱捷科技开发的样例代码,包含xts和wifi两个demo的配置文件和hal模块。
 
-## 软件架构
+## 软件目录
 
 代码路径：
 
@@ -20,7 +20,7 @@ vendor/asrmicro/                      --- vendor_asrmicro 仓库路径
 
 ## 安装教程
 
-参考 [安装调试教程](https://gitee.com/openharmony-sig/device_asrmicro/blob/master/README.md)
+参考 [安装调试教程](https://gitee.com/openharmony-sig/device_soc_asrmicro/blob/master/README_ZH.md)
 
 ## 使用说明
 
@@ -33,4 +33,4 @@ vendor/asrmicro/                      --- vendor_asrmicro 仓库路径
 
 ## 相关仓
 
-[device\_asrmicro](https://gitee.com/openharmony-sig/device_asrmicro)
+[device\_soc\_asrmicro](https://gitee.com/openharmony-sig/device_soc_asrmicro)：该仓库包含驱动代码、hal模块、wifi库文件、ble库文件等。
