@@ -79,7 +79,12 @@ const char* HalGetHardwareProfile(void)
 
 const char* HalGetSerial(void)
 {
-    return OHOS_SERIAL;
+    unsigned char macAddr[6] = {0x00};
+    static char serialNumber[13] = {0x00};
+    extern int lega_wlan_get_mac_address(unsigned char *addr);
+    lega_wlan_get_mac_address(macAddr);
+    snprintf(serialNumber,12,"%02X%02X%02X%02X%02X%02X",macAddr[0],macAddr[1],macAddr[2],macAddr[3],macAddr[4],macAddr[5]);
+    return serialNumber;
 }
 
 const char* HalGetBootloaderVersion(void)

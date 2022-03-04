@@ -11,7 +11,12 @@
       {
         "subsystem": "kernel",
         "components": [
-          { "component": "liteos_m", "features": [] }
+          {
+            "component": "liteos_m",
+            "features": [
+              "ohos_kernel_liteos_m_lwip_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/net/lwip-2.1\""
+            ]
+          }
         ]
       },
       {
@@ -59,8 +64,11 @@
         "components": [
           { "component": "huks", "features":
             [
-              "disable_huks_binary=true",
-              "disable_authenticate=true"
+              "disable_huks_binary = true",
+              "disable_authenticate = true",
+              "huks_use_hardware_root_key = true",
+              "huks_config_file = \"hks_config_lite.h\"",
+              "ohos_security_huks_mbedtls_porting_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/mbedtls\""
             ]
           }
         ]
@@ -78,6 +86,15 @@
     "xts_list": [
       {
         "enable": "false"
+      }
+    ],
+    "tests_list": [
+      {
+        "enable": "true",
+        "test_modules": [
+          "example",
+          "wifi_test"
+        ]
       }
     ]
   }
