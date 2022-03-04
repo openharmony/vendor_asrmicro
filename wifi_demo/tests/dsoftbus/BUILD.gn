@@ -11,30 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-declare_args() {
-  asr_wifi_test = true
-  asr_hdf_test = true
-  asr_dsoftbus_test = false
-}
-
-static_library("example") {
-  sources = [
-    "example.c",
-  ]
-  defines = []
-  deps = [ "//base/hiviewdfx/hilog_lite/frameworks/featured:hilog_static" ]
-
+static_library("dsoftbus_test") {
+  sources = [ "dsoftbus_app.c" ]
   include_dirs = [ "//utils/native/lite/include" ]
-
-  if (asr_wifi_test) {
-    deps += [ "wifi:wifi_test" ]
-  }
-
-  if (asr_hdf_test) {
-    deps += [ "hdf:hdf_test" ]
-  }
-
-  if (asr_dsoftbus_test) {
-    deps += [ "dsoftbus:dsoftbus_test" ]
-  }
 }

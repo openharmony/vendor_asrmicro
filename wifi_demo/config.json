@@ -64,8 +64,11 @@
         "components": [
           { "component": "huks", "features":
             [
-              "disable_huks_binary=true",
-              "disable_authenticate=true"
+              "disable_huks_binary = true",
+              "disable_authenticate = true",
+              "huks_use_hardware_root_key = true",
+              "huks_config_file = \"hks_config_lite.h\"",
+              "ohos_security_huks_mbedtls_porting_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/mbedtls\""
             ]
           }
         ]
