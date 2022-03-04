@@ -55,7 +55,7 @@ static void uart_test_case(DevHandle uart_handle)
                 return;
             }
             state++;
-            printf("get baudrate = %d", baudrate);
+            printf("get baudrate = %u", baudrate);
             break;
         case UART_CONFIG:
             attr.dataBits = UART_ATTR_DATABIT_8;
@@ -123,16 +123,16 @@ void uart_test(void)
 static void HDFTask(void *arg)
 {
     (void)arg;
+    uint32_t val = 0;
     GpioSetIrq(1, OSAL_IRQF_TRIGGER_FALLING, GpioKeyIrqFunc, NULL);
     GpioEnableIrq(1);
-    uint32_t val;
     while(1) {
         val++;
         GpioWrite(0, 0);
         lega_rtos_delay_milliseconds(1000);
         GpioWrite(0, 1);
         lega_rtos_delay_milliseconds(1000);
-        printf("blink led3,%d\n", val);
+        printf("blink led3,%u\n", val);
         uart_test();
     }
 }
