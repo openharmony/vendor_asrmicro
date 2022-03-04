@@ -11,7 +11,12 @@
       {
         "subsystem": "kernel",
         "components": [
-          { "component": "liteos_m", "features": [] }
+          {
+            "component": "liteos_m",
+            "features": [
+              "ohos_kernel_liteos_m_lwip_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/net/lwip-2.1\""
+            ]
+          }
         ]
       },
       {
@@ -78,6 +83,15 @@
     "xts_list": [
       {
         "enable": "false"
+      }
+    ],
+    "tests_list": [
+      {
+        "enable": "true",
+        "test_modules": [
+          "example",
+          "wifi_test"
+        ]
       }
     ]
   }
