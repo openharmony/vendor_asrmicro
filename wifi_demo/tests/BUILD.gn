@@ -14,13 +14,11 @@
 declare_args() {
   asr_wifi_test = true
   asr_hdf_test = true
-  asr_dsoftbus_test = false
+  asr_dsoftbus_test = true
 }
 
 static_library("example") {
-  sources = [
-    "example.c",
-  ]
+  sources = [ "example.c" ]
   defines = []
   deps = [ "//base/hiviewdfx/hilog_lite/frameworks/featured:hilog_static" ]
 
