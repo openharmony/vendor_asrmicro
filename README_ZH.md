@@ -20,7 +20,7 @@ vendor/asrmicro/                      --- vendor_asrmicro 仓库路径
 
 ## 安装教程
 
-参考 [安装调试教程](https://gitee.com/openharmony-sig/device_soc_asrmicro/blob/master/README_ZH.md)
+参考 [安装调试教程](https://gitee.com/openharmony/device_soc_asrmicro/blob/master/README_ZH.md)
 
 ## 使用说明
 
@@ -33,4 +33,4 @@ vendor/asrmicro/                      --- vendor_asrmicro 仓库路径
 
 ## 相关仓
 
-[device\_soc\_asrmicro](https://gitee.com/openharmony-sig/device_soc_asrmicro)：该仓库包含驱动代码、hal模块、wifi库文件、ble库文件等。
+[device\_soc\_asrmicro](https://gitee.com/openharmony/device_soc_asrmicro)：该仓库包含驱动代码、hal模块、wifi库文件、ble库文件等。
