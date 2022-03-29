@@ -35,7 +35,8 @@
       {
         "subsystem": "communication",
         "components": [
-          { "component": "wifi_lite", "features":[] }
+          { "component": "wifi_lite", "features":[] },
+          { "component": "dsoftbus", "features":[] }
          ]
        },
       {
