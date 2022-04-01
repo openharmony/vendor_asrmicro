@@ -1,101 +1,134 @@
 {
-    "product_name": "wifi_demo",
-    "type": "mini",
-    "version": "3.0",
-    "ohos_version": "OpenHarmony 1.0",
-    "device_company": "lango",
-    "board": "dev_wifi_a",
-    "kernel_type": "liteos_m",
-    "kernel_version": "3.0.0",
-    "subsystems": [
+   "board" : "dev_wifi_a",
+   "device_company" : "lango",
+   "kernel_type" : "liteos_m",
+   "kernel_version" : "3.0.0",
+   "ohos_version" : "OpenHarmony 1.0",
+   "product_adapter_dir" : "//vendor/asrmicro/wifi_demo/hals",
+   "product_name" : "wifi_demo",
+   "subsystems" : [
       {
-        "subsystem": "kernel",
-        "components": [
-          {
-            "component": "liteos_m",
-            "features": [
-              "ohos_kernel_liteos_m_lwip_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/net/lwip-2.1\""
-            ]
-          }
-        ]
+         "components" : [
+            {
+               "component" : "liteos_m",
+               "features" : [
+                  "ohos_kernel_liteos_m_lwip_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/net/lwip-2.1\""
+               ]
+            }
+         ],
+         "subsystem" : "kernel"
       },
       {
-        "subsystem": "hiviewdfx",
-        "components": [
-          { "component": "hilog_lite", "features":[] },
-          { "component": "hievent_lite", "features":[] }
-        ]
+         "components" : [
+            {
+               "component" : "hilog_lite",
+               "features" : []
+            },
+            {
+               "component" : "hievent_lite",
+               "features" : []
+            }
+         ],
+         "subsystem" : "hiviewdfx"
       },
       {
-        "subsystem": "distributedschedule",
-        "components": [
-          { "component": "samgr_lite", "features":[] }
-        ]
+         "components" : [
+            {
+               "component" : "samgr_lite",
+               "features" : []
+            }
+         ],
+         "subsystem" : "distributedschedule"
       },
       {
-        "subsystem": "communication",
-        "components": [
-          { "component": "wifi_lite", "features":[] },
-          { "component": "dsoftbus", "features":[] }
-         ]
-       },
-      {
-        "subsystem": "utils",
-        "components": [
-          { "component": "file", "features":[] },
-          { "component": "kv_store",
-            "features": [
-              "enable_ohos_utils_native_lite_kv_store_use_posix_kv_api = false"
-            ]
-          },
-          { "component": "os_dump", "features":[] },
-          { "component": "timer_task", "features":[] },
-          { "component": "kal_timer", "features":[] }
-        ]
+         "components" : [
+            {
+               "component" : "wifi_lite",
+               "features" : []
+            },
+            {
+               "component" : "dsoftbus",
+               "features" : []
+            }
+         ],
+         "subsystem" : "communication"
       },
       {
-        "subsystem": "startup",
-        "components": [
-          { "component": "bootstrap_lite", "features":[] },
-          { "component": "syspara_lite", "features":[] }
-        ]
+         "components" : [
+            {
+               "component" : "file",
+               "features" : []
+            },
+            {
+               "component" : "kv_store",
+               "features" : [ "enable_ohos_utils_native_lite_kv_store_use_posix_kv_api = false" ]
+            },
+            {
+               "component" : "os_dump",
+               "features" : []
+            },
+            {
+               "component" : "timer_task",
+               "features" : []
+            },
+            {
+               "component" : "kal_timer",
+               "features" : []
+            }
+         ],
+         "subsystem" : "utils"
       },
       {
-        "subsystem": "security",
-        "components": [
-          { "component": "huks", "features":
-            [
-              "disable_huks_binary = true",
-              "disable_authenticate = true",
-              "huks_use_hardware_root_key = true",
-              "huks_config_file = \"hks_config_lite.h\"",
-              "ohos_security_huks_mbedtls_porting_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/mbedtls\""
-            ]
-          }
-        ]
+         "components" : [
+            {
+               "component" : "bootstrap_lite",
+               "features" : []
+            },
+            {
+               "component" : "syspara_lite",
+               "features" : []
+            }
+         ],
+         "subsystem" : "startup"
       },
       {
-        "subsystem": "iot_hardware",
-        "components": [
-          { "component": "iot_controller", "features":[] }
-        ]
+         "components" : [
+            {
+               "component" : "huks",
+               "features" : [
+                  "disable_huks_binary = true",
+                  "disable_authenticate = true",
+                  "huks_use_hardware_root_key = true",
+                  "huks_config_file = \"hks_config_lite.h\"",
+                  "ohos_security_huks_mbedtls_porting_path = \"//device/soc/asrmicro/asr582x/liteos_m/components/mbedtls\""
+               ]
+            }
+         ],
+         "subsystem" : "security"
+      },
+      {
+         "components" : [
+            {
+               "component" : "iot_controller",
+               "features" : []
+            }
+         ],
+         "subsystem" : "iot_hardware"
       }
-    ],
-    "third_party_dir": "",
-    "vendor_adapter_dir": "//device/soc/asrmicro/asr582x/liteos_m/sdk/adapter",
-    "product_adapter_dir": "//vendor/asrmicro/wifi_demo/hals",
-    "xts_list": [
+   ],
+   "tests_list" : [
       {
-        "enable": "false"
+         "enable" : "true",
+         "test_modules" : [ "example", "wifi_test" ]
       }
-    ],
-    "tests_list": [
+   ],
+   "third_party_dir" : "",
+   "type" : "mini",
+   "vendor_adapter_dir" : "//device/soc/asrmicro/asr582x/liteos_m/sdk/adapter",
+   "version" : "3.0",
+   "xts_list" : [
       {
-        "enable": "true",
-        "test_modules": [
-          "example",
-          "wifi_test"
-        ]
+         "enable" : "false"
       }
-    ]
-  }
+   ]
+}

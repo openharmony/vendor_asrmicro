@@ -126,7 +126,7 @@ static void HDFTask(void *arg)
     uint32_t val = 0;
     GpioSetIrq(1, OSAL_IRQF_TRIGGER_FALLING, GpioKeyIrqFunc, NULL);
     GpioEnableIrq(1);
-    while(1) {
+    while (1) {
         val++;
         GpioWrite(0, 0);
         lega_rtos_delay_milliseconds(1000);

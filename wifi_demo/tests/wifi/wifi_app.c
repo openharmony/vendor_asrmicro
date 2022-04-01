@@ -58,8 +58,7 @@ static int ap_conn_func(int argc, char **argv)
     WifiDeviceConfig conf;
 
     printf("doing...\n");
-    switch(argc)
-    {
+    switch (argc) {
         case 1:
         case 2:
             break;
@@ -68,35 +67,25 @@ static int ap_conn_func(int argc, char **argv)
         case 5:
         case 6:
         case 7:
-            if ((strcmp(argv[1],"sta") == 0))
-            {
-                if(strlen((char *)argv[2]) > 32)
-                {
+            if ((strcmp(argv[1], "sta") == 0)) {
+                if (strlen((char *)argv[2]) > 32) {
                     return -1;
                 }
-                strcpy((char*)conf.ssid, (char*)argv[2]);
+                strcpy((char *)conf.ssid, (char *)argv[2]);
 
-                if(argc >= 4)
-                {
-                    if((strlen(argv[3]) > 4)&&(strlen(argv[3]) < 65))
-                     {
-                        strcpy((char*)conf.preSharedKey, (char*)argv[3]);
+                if (argc >= 4) {
+                    if ((strlen(argv[3]) > 4) && (strlen(argv[3]) < 65)) {
+                        strcpy((char *)conf.preSharedKey, (char *)argv[3]);
                         conf.securityType = WIFI_SEC_TYPE_PSK;
-                     }
-                    else if((strlen(argv[3]) == 1) && (convert_str_to_int(argv[3]) == 0))
-                    {
+                    } else if ((strlen(argv[3]) == 1) && (convert_str_to_int(argv[3]) == 0)) {
                         conf.securityType = WIFI_SEC_TYPE_OPEN;
                         memset(conf.preSharedKey, 0, 64);
-                    }
-                    else
-                    {
+                    } else {
                         printf("param4 error, input 0 or pwd(length >= 5)\n");
                         return -1;
                     }
                 }
-            }
-            else
-            {
+            } else {
                 printf("param2 error,not support\r\n");
                 return -1;
             }

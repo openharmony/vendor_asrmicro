@@ -32,92 +32,92 @@ static const int OHOS_FIRST_API_VERSION = 1;
 
 static const char EMPTY_STR[] = {""};
 
-const char* HalGetDeviceType(void)
+const char *HalGetDeviceType(void)
 {
     return OHOS_DEVICE_TYPE;
 }
 
-const char* HalGetManufacture(void)
+const char *HalGetManufacture(void)
 {
     return OHOS_MANUFACTURE;
 }
 
-const char* HalGetBrand(void)
+const char *HalGetBrand(void)
 {
     return OHOS_BRAND;
 }
 
-const char* HalGetMarketName(void)
+const char *HalGetMarketName(void)
 {
     return OHOS_MARKET_NAME;
 }
 
-const char* HalGetProductSeries(void)
+const char *HalGetProductSeries(void)
 {
     return OHOS_PRODUCT_SERIES;
 }
 
-const char* HalGetProductModel(void)
+const char *HalGetProductModel(void)
 {
     return OHOS_PRODUCT_MODEL;
 }
 
-const char* HalGetSoftwareModel(void)
+const char *HalGetSoftwareModel(void)
 {
     return OHOS_SOFTWARE_MODEL;
 }
 
-const char* HalGetHardwareModel(void)
+const char *HalGetHardwareModel(void)
 {
     return OHOS_HARDWARE_MODEL;
 }
 
-const char* HalGetHardwareProfile(void)
+const char *HalGetHardwareProfile(void)
 {
     return OHOS_HARDWARE_PROFILE;
 }
 
-const char* HalGetSerial(void)
+const char *HalGetSerial(void)
 {
     return OHOS_SERIAL;
 }
 
-const char* HalGetBootloaderVersion(void)
+const char *HalGetBootloaderVersion(void)
 {
     return OHOS_BOOTLOADER_VERSION;
 }
 
-const char* HalGetAbiList(void)
+const char *HalGetAbiList(void)
 {
     return OHOS_ABI_LIST;
 }
 
-const char* HalGetDisplayVersion(void)
+const char *HalGetDisplayVersion(void)
 {
     return OHOS_DISPLAY_VERSION;
 }
 
-const char* HalGetIncrementalVersion(void)
+const char *HalGetIncrementalVersion(void)
 {
     return INCREMENTAL_VERSION;
 }
 
-const char* HalGetBuildType(void)
+const char *HalGetBuildType(void)
 {
     return BUILD_TYPE;
 }
 
-const char* HalGetBuildUser(void)
+const char *HalGetBuildUser(void)
 {
     return BUILD_USER;
 }
 
-const char* HalGetBuildHost(void)
+const char *HalGetBuildHost(void)
 {
     return BUILD_HOST;
 }
 
-const char* HalGetBuildTime(void)
+const char *HalGetBuildTime(void)
 {
     return BUILD_TIME;
 }
