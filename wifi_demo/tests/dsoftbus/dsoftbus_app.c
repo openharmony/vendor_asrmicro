@@ -19,12 +19,11 @@
 #include "ohos_init.h"
 
 extern void InitSoftBusServer(void);
-extern int lega_wlan_get_connected_status();
+extern int lega_wlan_get_connected_status(void);
 
 static void DSoftTask(void *arg)
 {
-    while(lega_wlan_get_connected_status()==0)
-    {
+    while (lega_wlan_get_connected_status() == 0) {
         osDelay(500);
     }
     printf("InitSoftBusServer: %s\r\n", __func__);
@@ -40,7 +39,7 @@ static void DSoftBus_App(void)
     attr.cb_mem = NULL;
     attr.cb_size = 0U;
     attr.stack_mem = NULL;
-    attr.stack_size = 1024*4;
+    attr.stack_size = 1024 * 4;
     attr.priority = 24;
 
     if (osThreadNew((osThreadFunc_t)DSoftTask, NULL, &attr) == NULL) {
