@@ -18,13 +18,17 @@
 #include "cmsis_os2.h"
 #include "ohos_init.h"
 
+#define SOFTBUS_TASK_STACK_SIZE (4096)
+#define SOFTBUS_TASK_PRIO       (24)
+#define WLAN_DELAY_TICKS        (500)
+
 extern void InitSoftBusServer(void);
 extern int lega_wlan_get_connected_status(void);
 
 static void DSoftTask(void *arg)
 {
     while (lega_wlan_get_connected_status() == 0) {
-        osDelay(500);
+        osDelay(WLAN_DELAY_TICKS);
     }
     printf("InitSoftBusServer: %s\r\n", __func__);
     InitSoftBusServer();
@@ -39,8 +43,8 @@ static void DSoftBus_App(void)
     attr.cb_mem = NULL;
     attr.cb_size = 0U;
     attr.stack_mem = NULL;
-    attr.stack_size = 1024 * 4;
-    attr.priority = 24;
+    attr.stack_size = SOFTBUS_TASK_STACK_SIZE;
+    attr.priority = SOFTBUS_TASK_PRIO;
 
     if (osThreadNew((osThreadFunc_t)DSoftTask, NULL, &attr) == NULL) {
         printf("Falied to create dsoftbus task!\n");

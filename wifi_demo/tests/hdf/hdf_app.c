@@ -17,6 +17,10 @@
 #include "gpio_if.h"
 #include "uart_if.h"
 
+#define UART_BUAD_RATE 115200
+#define LED_BLINK_DELAY 1000
+#define HDF_TASK_STACK_SIZE 1024
+
 enum case_test_index {
     SET_BAUD,
     GET_BAUD,
@@ -41,7 +45,7 @@ static void uart_test_case(DevHandle uart_handle)
 
     switch (state) {
         case SET_BAUD:
-            ret = UartSetBaud(uart_handle, 115200);
+            ret = UartSetBaud(uart_handle, UART_BUAD_RATE);
             if (ret != 0) {
                 printf("%s, state[%d] failed", __func__, state);
                 return;
@@ -128,10 +132,10 @@ static void HDFTask(void *arg)
     GpioEnableIrq(1);
     while (1) {
         val++;
-        GpioWrite(0, 0);
-        lega_rtos_delay_milliseconds(1000);
-        GpioWrite(0, 1);
-        lega_rtos_delay_milliseconds(1000);
+        GpioWrite(0, GPIO_VAL_LOW);
+        lega_rtos_delay_milliseconds(LED_BLINK_DELAY);
+        GpioWrite(0, GPIO_VAL_HIGH);
+        lega_rtos_delay_milliseconds(LED_BLINK_DELAY);
         printf("blink led3,%u\n", val);
         uart_test();
     }
@@ -141,7 +145,7 @@ void HDF_App(void)
 {
     printf("example: %s\r\n", __func__);
     osThreadAttr_t attr = {0};
-    attr.stack_size = 1024;
+    attr.stack_size = HDF_TASK_STACK_SIZE;
     attr.priority = osPriorityNormal;
     attr.name = "hdftest";
     if (osThreadNew((osThreadFunc_t)HDFTask, NULL, &attr) == NULL) {

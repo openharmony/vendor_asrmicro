@@ -16,6 +16,8 @@
 #include "ohos_init.h"
 #include "log.h"
 
+#define DEMO_TASK_STACK_SIZE 1024
+
 static void DemoSdkTask(void *arg)
 {
     (void)arg;
@@ -25,7 +27,7 @@ void DemoSdkMain(void)
 {
     printf("example: %s\r\n", __func__);
     osThreadAttr_t attr = {0};
-    attr.stack_size = 1024;
+    attr.stack_size = DEMO_TASK_STACK_SIZE;
     attr.priority = osPriorityNormal;
     attr.name = "DemoSdk";
     if (osThreadNew((osThreadFunc_t)DemoSdkTask, NULL, &attr) == NULL) {
