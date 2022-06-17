@@ -92,6 +92,10 @@
             {
                "component" : "syspara_lite",
                "features" : []
+            },
+            {
+               "component" : "init_lite",
+               "features":["enable_ohos_startup_init_feature_begetctl_liteos = true"]
             }
          ],
          "subsystem" : "startup"
