@@ -12,9 +12,7 @@
 # limitations under the License.
 
 static_library("wifi_test") {
-  sources = [
-    "wifi_app.c",
-  ]
+  sources = [ "wifi_app.c" ]
   include_dirs = [
     "//utils/native/lite/include",
     "//foundation/communication/wifi_lite/interfaces/wifiservice/",

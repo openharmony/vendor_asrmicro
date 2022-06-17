@@ -12,15 +12,13 @@
 # limitations under the License.
 
 static_library("hdf_test") {
-  sources = [
-    "hdf_app.c",
-  ]
+  sources = [ "hdf_app.c" ]
   include_dirs = [
-    "//drivers/framework/include/platform",
-    "//drivers/framework/include/utils",
-    "//drivers/adapter/khdf/liteos_m/osal/include",
-    "//drivers/framework/include/osal",
-    "//drivers/framework/core/common/include/manager",
+    "//drivers/hdf_core/framework/include/platform",
+    "//drivers/hdf_core/framework/include/utils",
+    "//drivers/hdf_core/adapter/khdf/liteos_m/osal/include",
+    "//drivers/hdf_core/framework/include/osal",
+    "//drivers/hdf_core/framework/core/common/include/manager",
     "//utils/native/lite/include",
     "//utils/native/lite/memory/include",
   ]
