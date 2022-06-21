@@ -60,10 +60,6 @@
                "features" : []
             },
             {
-               "component" : "os_dump",
-               "features" : []
-            },
-            {
                "component" : "timer_task",
                "features" : []
             },
