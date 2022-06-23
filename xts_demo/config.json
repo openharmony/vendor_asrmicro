@@ -42,7 +42,6 @@
         "subsystem": "utils",
         "components": [
           { "component": "file", "features":[] },
-          { "component": "os_dump", "features":[] },
           { "component": "timer_task", "features":[] },
           { "component": "kal_timer", "features":[] }
         ]
@@ -87,7 +86,8 @@
         "components": [
           {"component": "xts_acts", "features":
             [
-              "enable_ohos_test_xts_acts_use_thirdparty_lwip = true"
+              "enable_ohos_test_xts_acts_use_thirdparty_lwip = true",
+              "build_xts = true"
             ]
           },
           { "component": "xts_tools", "features":[] }
