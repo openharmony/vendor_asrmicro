@@ -68,7 +68,7 @@
                "features" : []
             }
          ],
-         "subsystem" : "utils"
+         "subsystem" : "commonlibrary"
       },
       {
          "components" : [
