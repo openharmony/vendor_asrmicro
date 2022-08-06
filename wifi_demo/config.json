@@ -38,7 +38,7 @@
                "features" : []
             }
          ],
-         "subsystem" : "distributedschedule"
+         "subsystem" : "systemabilitymgr"
       },
       {
          "components" : [
