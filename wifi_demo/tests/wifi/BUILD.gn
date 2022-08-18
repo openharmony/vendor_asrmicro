@@ -14,7 +14,7 @@
 static_library("wifi_test") {
   sources = [ "wifi_app.c" ]
   include_dirs = [
-    "//utils/native/lite/include",
+    "//commonlibrary/utils_lite/include",
     "//foundation/communication/wifi_lite/interfaces/wifiservice/",
   ]
 }
