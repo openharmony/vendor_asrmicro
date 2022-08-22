@@ -114,11 +114,11 @@
       {
          "components" : [
             {
-               "component" : "iot_controller",
+               "component" : "peripheral", 
                "features" : []
             }
          ],
-         "subsystem" : "iot_hardware"
+         "subsystem" : "iothardware"
       }
    ],
    "tests_list" : [
