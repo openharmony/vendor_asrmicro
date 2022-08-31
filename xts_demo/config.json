@@ -60,7 +60,9 @@
           { "component": "huks", "features":
             [
               "disable_huks_binary = true",
-              "disable_authenticate = true"
+              "disable_authenticate = true",
+              "huks_use_lite_storage = true",
+              "huks_config_file = \"hks_config_lite.h\""
             ]
           }
         ]
