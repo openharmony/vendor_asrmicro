@@ -47,7 +47,7 @@ static void DSoftBus_App(void)
     attr.priority = SOFTBUS_TASK_PRIO;
 
     if (osThreadNew((osThreadFunc_t)DSoftTask, NULL, &attr) == NULL) {
-        printf("Falied to create dsoftbus task!\n");
+        printf("Failed to create dsoftbus task!\n");
     }
 }
 
