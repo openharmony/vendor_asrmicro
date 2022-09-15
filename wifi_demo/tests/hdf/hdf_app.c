@@ -29,8 +29,9 @@ enum case_test_index {
     UART_READ
 };
 
-int32_t GpioKeyIrqFunc(uint16_t gpio, void *data)
+void GpioKeyIrqFunc(uint16_t gpio, void *data)
 {
+    (void)data;
     printf("user key %d pressed\n", gpio);
 }
 
