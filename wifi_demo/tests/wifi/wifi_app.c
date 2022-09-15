@@ -61,8 +61,6 @@ static void Wifi_sta(WifiDeviceConfig conf)
 
 static int ap_conn_func(int argc, char **argv)
 {
-    int32_t ret;
-    uint32_t start_ip = 0;
     WifiDeviceConfig conf;
 
     printf("doing...\n");
