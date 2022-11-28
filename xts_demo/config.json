@@ -92,12 +92,9 @@
       {
         "enable": "true",
         "xts_modules": [
-          "ActsKvStoreTest",
           "ActsDfxFuncTest",
           "ActsHieventLiteTest",
           "ActsSamgrTest",
-          "ActsParameterTest",
-          "ActsWifiServiceTest",
           "ActsWifiIotTest",
           "ActsBootstrapTest"
         ]
