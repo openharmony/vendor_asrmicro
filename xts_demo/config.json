@@ -86,7 +86,7 @@
               "build_xts = true"
             ]
           },
-          { "component": "xts_tools", "features":[] }
+          { "component": "tools", "features":[] }
         ]
       }
     ],
