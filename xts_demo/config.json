@@ -80,13 +80,13 @@
       {
         "subsystem": "xts",
         "components": [
-          {"component": "xts_acts", "features":
+          {"component": "acts", "features":
             [
               "enable_ohos_test_xts_acts_use_thirdparty_lwip = true",
               "build_xts = true"
             ]
           },
-          { "component": "xts_tools", "features":[] }
+          { "component": "tools", "features":[] }
         ]
       }
     ],
